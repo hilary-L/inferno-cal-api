@@ -17,9 +17,7 @@ let db, createdDate, timeDifference;
 
 let today = new Date();
 
-//process.env.MONGODB_URI
-
-mongodb.MongoClient.connect('mongodb://heroku_2s1dc220:peiuo19kkmu4gqt22kaug42egv@ds161048.mlab.com:61048/heroku_2s1dc220', function(err, database) {
+mongodb.MongoClient.connect(process.env.MONGODB_URI, function(err, database) {
 	if(err) {
 		console.log(err);
 		process.exit(1);
